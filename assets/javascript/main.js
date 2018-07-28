@@ -44,6 +44,23 @@ $( document ).ready( function() {
         } 
     })
 
+    $(".collapse").on("click", function() {
+        $(".collapse").css("display", "none");
+        $(".userForm").css("display", "none");
+        var expand = $("<button type = 'button'>");
+        $(expand).attr("class", "expand");
+        $(expand).html("&#9660;&#9660;&#9660;");
+        $("body").prepend(expand);
+        $(".topicArray").css("margin-top", "25px");
+    })
+
+    $(document).on("click", ".expand", function() {
+        $(".collapse").css("display", "inline-block");
+        $(".userForm").css("display", "block");
+        $(".topicArray").css("margin-top", "270px");
+        $(".expand").detach();
+    })
+
     // click function for the main buttons, uses the ajax call for 10 gifs based on which button the user clicked and adds them to the page
     // in still form, as well as displaying the rating of the gif below them
 
