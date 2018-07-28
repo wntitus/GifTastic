@@ -61,12 +61,13 @@ $( document ).ready( function() {
         $(".expand").detach();
     })
 
+
     // click function for the main buttons, uses the ajax call for 10 gifs based on which button the user clicked and adds them to the page
     // in still form, as well as displaying the rating of the gif below them
 
     $(document).on("click", ".gifBtn", function() {
         var topic = $(this).val();
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=AcN1tGKKi7bbptq3UtIL3QTwWEFl0EPX&limit=10"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=AcN1tGKKi7bbptq3UtIL3QTwWEFl0EPX&limit=10";
         $(".gifBox").empty();
 
         $.ajax({
@@ -94,6 +95,8 @@ $( document ).ready( function() {
             }
 
         })
+
+    
     
     })
 

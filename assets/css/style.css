@@ -42,7 +42,7 @@ button {
     height: 100px;
     margin-top: 7.5px;
     width: 50%;
-    background-color: #e0e0d1;
+    background-color: #1abc9c;
     font-size: 50px;
     border: 2px solid black;
     border-radius: 4px;
@@ -57,7 +57,7 @@ button {
 .gifBtn {
     font-family: 'Rubik', sans-serif;
     font-size: 25px;
-    background-color: #99ccff;
+    background-color: #3498db;
     margin: 15px;
     height: fit-content;
     width: fit-content;
