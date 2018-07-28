@@ -27,6 +27,7 @@ $( document ).ready( function() {
     // the button will not be added
 
     $(".addChoice").on("click", function() {
+        this.preventDefault();
         var userChoice = $(".userText").val().trim();
         if (userChoice === "") {
             return;
@@ -36,6 +37,13 @@ $( document ).ready( function() {
         $(".userText").val("");
     })
 
+    //prevents user from using enter key to submit their choice
+
+    $(".userText").keypress(function(event) {
+        if (event.which == 13) {
+            event.preventDefault();
+        } 
+    })
 
     // click function for the main buttons, uses the ajax call for 10 gifs based on which button the user clicked and adds them to the page
     // in still form, as well as displaying the rating of the gif below them
@@ -53,7 +61,7 @@ $( document ).ready( function() {
                 var respIndex = response.data[i];
                 var stillGif = respIndex.images.fixed_height_still.url;
                 var activeGif = respIndex.images.fixed_height.url;
-                var rating = respIndex.rating;
+                var rating = respIndex.rating.toUpperCase();
                 var ratingBox = $("<h3>");
                 var imgBox = $("<div>");
                 $(imgBox).attr("class", "imgBox");
