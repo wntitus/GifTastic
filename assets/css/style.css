@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box:
+}
+
+.userForm {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.userText {
+    
+}
+
+button {
+    font-family: 'Quicksand', sans-serif;
+}
