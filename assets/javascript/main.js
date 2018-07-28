@@ -27,7 +27,6 @@ $( document ).ready( function() {
     // the button will not be added
 
     $(".addChoice").on("click", function() {
-        this.preventDefault();
         var userChoice = $(".userText").val().trim();
         if (userChoice === "") {
             return;
