@@ -33,6 +33,7 @@ $( document ).ready( function() {
         }
         topics.push(userChoice);
         btnPopulate();
+        $(".userText").val("");
     })
 
 
