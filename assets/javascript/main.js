@@ -30,7 +30,6 @@ $( document ).ready( function() {
             url: queryURL,
             method: "GET"
         }).then(function(response){
-            console.log(response);
             for (i = 0; i < response.data.length; i++) {
                 var respIndex = response.data[i];
                 var stillGif = respIndex.images.fixed_height_still.url;
@@ -38,12 +37,28 @@ $( document ).ready( function() {
                 var imgElem = $("<img>");
                 $(imgElem).attr("data-still", stillGif);
                 $(imgElem).attr("data-active", activeGif);
+                $(imgElem).attr("data-state", "still");
+                $(imgElem).attr("class", "animalGif");
                 $(imgElem).attr("src", stillGif);
                 $(".gifBox").append(imgElem);
             }
+            $("img").on("click", function() {
+                var gifState = $(this).attr("data-state");
+                if (gifState === "still") {
+                    $(this).attr("src", $(this).attr("data-active"));
+                    $(this).attr("data-state", "active");
+                } else if (gifState === "active"){
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                }
+            })
         })
     
     })
+
+   
+
+
 })
 
 
